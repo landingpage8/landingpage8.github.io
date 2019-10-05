@@ -366,7 +366,7 @@
 <script type="text/javascript" src="html/krystal/html/js/jquery.countdown.js"></script>
 <script>
 
- var product = (function () {/*
+/* var product = (function () {/*
  <div class="product-image">
     <a href=""><img class="product_image" src="html/krystal/html/images/product/p2.jpg" alt="p2"></a>
     <span class="onnew">new</span>
@@ -379,7 +379,7 @@
  </span>
  <div class="product-infomation"></div>
  </div>
- */}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1];
+ *//*}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1];
     const urlParams = new URLSearchParams(window.location.search);
     const search = urlParams.get('search');
     $(document).ready(function() {
@@ -396,7 +396,6 @@
                         product_item.innerHTML = product;
                         $(product_item).find('.product_image')[0].src = collection[i][2];
                         $(product_item).find('.product_title').text(collection[i][0]);
-                        $(product_item).find('.product-infomation').text(collection[i][3]);
                         for(let j=0; j<parseInt(collection[i][1]); j++){
                             $(product_item).find('.star-rating').prepend('<i class="fa fa-star" aria-hidden="true"></i>');
                         }
@@ -423,7 +422,7 @@
         }
         console.log(lines);
         return lines;
-    }
+    }*/
 </script>
 </body>
 </html>
