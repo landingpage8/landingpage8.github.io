@@ -24,6 +24,29 @@ REPONSIVE
 /*-------------------------*/
 @import url(html/krystal/html/js/fancybox/source/jquery.fancybox.css);
 @import url(html/krystal/html/js/fancybox/source/helpers/jquery.fancybox-thumbs.css);
+
+/*Load more button*/
+
+#loadMore {
+    padding: 10px;
+    text-align: center;
+    background-color: #31629f;
+    color: #fff;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: #fff;
+    box-shadow: 0 1px 1px #ccc;
+    transition: all 600ms ease-in-out;
+    -webkit-transition: all 600ms ease-in-out;
+    -moz-transition: all 600ms ease-in-out;
+    -o-transition: all 600ms ease-in-out;
+}
+#loadMore:hover {
+    background-color: #fff;
+    color: #33739E;
+}
+
+/*Load more button*/
 body{
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
@@ -286,6 +309,26 @@ input[type=password]{
     display: none !important;
   }
 }
+@media all and (max-width: 767px) and (min-width: 320px){
+    ul#collapsibleNavbar.navbar-nav {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #d1d1d1;
+    justify-content: initial !important;
+    top: 40px;
+    box-sizing: border-box;
+}
+
+ul#collapsibleNavbar.navbar-nav li.nav-item:first-child {margin: 10px 0 0;}
+
+ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
+    margin: 0 0 10px;
+}
+}
+ 
 @media (max-width: 767px) {
   .float-none{
     float: none;
@@ -5317,6 +5360,7 @@ label.inline{
   border:1px solid #e6e6e6;
   padding: 5px 19px;
   border-top: none;
+	display: none;
 }
 .products-list .product-items:hover{
   box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
