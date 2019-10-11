@@ -21,8 +21,8 @@
         <div class="form-content">
             <div class="control">
                 <a href="#" class="close-block-serach"><span class="icon fa fa-times"></span></a>
-                <input type="text" name="search" placeholder="Search" class="input-subscribe">
-                <button type="submit" class="btn search">
+                <input type="text" name="search" placeholder="Search" id="textInput" class="input-subscribe">
+                <button type="submit" id="submitBtn" class="btn search">
                     <span><i class="fa fa-search" aria-hidden="true"></i></span>
                 </button>
             </div>
@@ -278,17 +278,20 @@
 
                         <div class="products products-list">
 
-                            
-                        </div>
 
+                        </div>
+<!--Load more-->
+                        <a href="#" id="loadMore">Load More</a>
+
+                        <!--Load more-->
 
                         <div class="pagination">
-                            <ul class="nav-links">
+<!--<ul class="nav-links">
                                 <li class="active"><a href="">1</a></li>
                                 <li><a href="">2</a></li>
                                 <li><a href="">3</a></li>
                                 <li class="back-next"><a href="">Next</a></li>
-                            </ul>
+                            </ul>-->
 
                         </div>
                     </div>
@@ -353,8 +356,28 @@
 <script type="text/javascript" src="html/krystal/html/js/Modernizr.js"></script>
 <script type="text/javascript" src="html/krystal/html/js/jquery.plugin.js"></script>
 <script type="text/javascript" src="html/krystal/html/js/jquery.countdown.js"></script>
+   <!-- <script type="text/javascript" src="lod.js"></script>-->
+    
 <script>
-
+$('.btn-search').click(function () {
+   let search = $('#search_text').val();
+   if(search != '') {
+       window.location.href = "search_result?search="+search;
+   }
+});
+    $( window ).on( "load", function() {
+    $(".products-list .product-items").slice(0, 3).show();
+    $("#loadMore").on('click', function (e) {
+        e.preventDefault();
+        $(".products-list .product-items:hidden").slice(0, 3).slideDown();
+        if ($(".products-list .product-items:hidden").length == 0) {
+            $("#load").fadeOut('slow');
+        }
+        $('html,body').animate({
+            scrollTop: $(this).offset().top
+        }, 1500);
+    });
+});
  var product = (function () {/*
  <div class="product-image">
     <a href=""><img class="product_image" src="html/krystal/html/images/product/p2.jpg" alt="p2"></a>
@@ -374,7 +397,7 @@
     $(document).ready(function() {
         $.ajax({
             type: "GET",
-            url: "csv/carss.csv",
+            url: "csv/carz.csv",
             dataType: "text",
             success: function(data) {
                 let collection = processData(data);
@@ -385,10 +408,13 @@
                         product_item.innerHTML = product;
                         $(product_item).find('.product_image')[0].src = collection[i][2];
                         $(product_item).find('.product_title').text(collection[i][0]);
+                        $(product_item).find('.product-infomation').text(collection[i][3]);
                         for(let j=0; j<parseInt(collection[i][1]); j++){
+                            /**ratinn=$(this).text(collection[i][1]);
+                            console.log(ratinn);**/
                             $(product_item).find('.star-rating').prepend('<i class="fa fa-star" aria-hidden="true"></i>');
                         }
-                        $(product_item).find('.product-infomation').text(collection[i][0]);
+                        $(product_item).find('.review').prepend('<span class="rate-num">'+collection[i][1]+'/5</span>');
                         $('.products-list').append(product_item);
                     }
                 }
@@ -413,6 +439,7 @@
         console.log(lines);
         return lines;
     }
-</script>
+    
+    </script>
 </body>
 </html>
