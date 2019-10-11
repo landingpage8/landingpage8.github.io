@@ -356,7 +356,6 @@
 <script type="text/javascript" src="html/krystal/html/js/Modernizr.js"></script>
 <script type="text/javascript" src="html/krystal/html/js/jquery.plugin.js"></script>
 <script type="text/javascript" src="html/krystal/html/js/jquery.countdown.js"></script>
-   <!-- <script type="text/javascript" src="lod.js"></script>-->
     
 <script>
 $('.btn-search').click(function () {
@@ -397,7 +396,7 @@ $('.btn-search').click(function () {
     $(document).ready(function() {
         $.ajax({
             type: "GET",
-            url: "csv/carz.csv",
+            url: "csv/carss.csv",
             dataType: "text",
             success: function(data) {
                 let collection = processData(data);
