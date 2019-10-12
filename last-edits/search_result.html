@@ -356,6 +356,7 @@
 <script type="text/javascript" src="html/krystal/html/js/Modernizr.js"></script>
 <script type="text/javascript" src="html/krystal/html/js/jquery.plugin.js"></script>
 <script type="text/javascript" src="html/krystal/html/js/jquery.countdown.js"></script>
+   <!-- <script type="text/javascript" src="lod.js"></script>-->
     
 <script>
 $('.btn-search').click(function () {
@@ -365,10 +366,10 @@ $('.btn-search').click(function () {
    }
 });
     $( window ).on( "load", function() {
-    $(".products-list .product-items").slice(0, 10).show();
+    $(".products-list .product-items").slice(0, 3).show();
     $("#loadMore").on('click', function (e) {
         e.preventDefault();
-        $(".products-list .product-items:hidden").slice(0, 15).slideDown();
+        $(".products-list .product-items:hidden").slice(0, 3).slideDown();
         if ($(".products-list .product-items:hidden").length == 0) {
             $("#load").fadeOut('slow');
         }
