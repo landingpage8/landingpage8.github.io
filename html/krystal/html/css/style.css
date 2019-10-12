@@ -24,26 +24,41 @@ REPONSIVE
 /*-------------------------*/
 @import url(html/krystal/html/js/fancybox/source/jquery.fancybox.css);
 @import url(html/krystal/html/js/fancybox/source/helpers/jquery.fancybox-thumbs.css);
+.products-list .product-items:nth-child(1),
+.products-list .product-items:nth-child(2),
+.products-list .product-items:nth-child(3),
+.products-list .product-items:nth-child(4),
+.products-list .product-items:nth-child(5),
+.products-list .product-items:nth-child(6),
+.products-list .product-items:nth-child(7),
+.products-list .product-items:nth-child(8),
+.products-list .product-items:nth-child(9),
+.products-list .product-items:nth-child(10){
+   display: block !important;
+}
 
 /*Load more button*/
 
 #loadMore {
-    padding: 10px;
+    padding: 7px 10px;
     text-align: center;
     background-color: #31629f;
     color: #fff;
-    border-width: 0 1px 1px 0;
+    border-width: 2px;
     border-style: solid;
-    border-color: #fff;
     box-shadow: 0 1px 1px #ccc;
     transition: all 600ms ease-in-out;
     -webkit-transition: all 600ms ease-in-out;
     -moz-transition: all 600ms ease-in-out;
     -o-transition: all 600ms ease-in-out;
+    margin: 30px 0px;
+    display: table;
+    border-color: transparent;
 }
 #loadMore:hover {
     background-color: #fff;
     color: #33739E;
+    border-color: #33739E;
 }
 
 /*Load more button*/
@@ -6738,3 +6753,5 @@ label.inline{
   color: #fff;
   border: 1px solid #31629f ;
 }
+
+
