@@ -392,7 +392,7 @@ $('.btn-search').click(function () {
                         let product_item = document.createElement('div');
                         product_item.className='product-items';
                         product_item.innerHTML = product;
-                        $(product_item).find('.product_image')[0].src = collection[i][2];
+                        $(product_item).find('.product_image')[0].src=collection[i][2];
                         $(product_item).find('.product_title').text(collection[i][0]);
                         $(product_item).find('.product-infomation').text(collection[i][3]);
                         for(let j=0; j<parseInt(collection[i][1]); j++){
