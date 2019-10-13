@@ -420,6 +420,7 @@ $('.btn-search').click(function () {
             }
         });
     });
+    setTimeout(function() {
     function processData(allText) {
         var allTextLines = allText.split(/\r\n|\n/);
         var headers = allTextLines[0].split(',');
@@ -438,7 +439,7 @@ $('.btn-search').click(function () {
         console.log(lines);
         return lines;
     }
-    
+    }, 1000);
     </script>
 </body>
 </html>
