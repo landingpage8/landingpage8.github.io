@@ -3444,7 +3444,7 @@ transition: none!important;
     float: right;
   }
   .nav-mind{
-    display: none;
+    display: inline-block;
   }
   .header-menu-bar{
     margin: 13px 0 0px 0;
