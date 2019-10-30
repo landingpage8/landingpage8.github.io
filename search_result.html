@@ -356,6 +356,7 @@
 <script type="text/javascript" src="html/krystal/html/js/Modernizr.js"></script>
 <script type="text/javascript" src="html/krystal/html/js/jquery.plugin.js"></script>
 <script type="text/javascript" src="html/krystal/html/js/jquery.countdown.js"></script>
+   <!-- <script type="text/javascript" src="lod.js"></script>-->
     
 <script>
 $('.btn-search').click(function () {
@@ -396,7 +397,7 @@ $('.btn-search').click(function () {
     $(document).ready(function() {
         $.ajax({
             type: "GET",
-            url: "csv/carsss.csv",
+            url: "csv/carss.csv",
             dataType: "text",
             success: function(data) {
                 let collection = processData(data);
@@ -405,7 +406,7 @@ $('.btn-search').click(function () {
                         let product_item = document.createElement('div');
                         product_item.className='product-items';
                         product_item.innerHTML = product;
-                        $(product_item).find('.product_image')[0].src=collection[i][2];
+                        $(product_item).find('.product_image')[0].src = collection[i][2];
                         $(product_item).find('.product_title').text(collection[i][0]);
                         $(product_item).find('.product-infomation').text(collection[i][3]);
                         for(let j=0; j<parseInt(collection[i][1]); j++){
@@ -438,6 +439,7 @@ $('.btn-search').click(function () {
         console.log(lines);
         return lines;
     }
+    
     </script>
 </body>
 </html>

@@ -34,7 +34,7 @@ a:hover {
     color: #33739E;
 }
 .products-list .product-items {
-	display: none;
+	display: none !important;
 }
 
 img{
